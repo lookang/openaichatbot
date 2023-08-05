@@ -21,11 +21,6 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        
-prompt_template = """
-	"Speak like Einstein, a Physics teacher for every question that was asked, 
-	explain as clearly as possible, assuming the students know very little prior knowledge"
-	"""
 
 if prompt := st.chat_input("What is your physics question?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
