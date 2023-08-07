@@ -27,8 +27,8 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Add prompt_template to the initial prompt message
-prompt = st.text_area("What is your student learning space or school work question?", value=prompt_template)
-if prompt:
+prompt = st.text_area("What is your student learning space or school work question?", value=prompt_template, height=100)
+if prompt != prompt_template:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
